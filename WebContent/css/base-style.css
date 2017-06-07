@@ -1,0 +1,32 @@
+body {
+	min-width: 410px; 		/* suppose you want minimun width of 1000px */
+	width: auto !important; /* Firefox will set width as auto */
+	width: 410px;   		/* As IE ignores !important it will set width as 1000px; */
+}
+
+.layout {
+	padding-top: 60px;
+	width: 95%;
+	margin: 0 auto;
+}
+
+.box [class^=col-] {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: 1px solid #ddd;
+	border: 1px solid rgba(86, 61, 124, .2);
+}
+
+.box {
+	margin-bottom: 15px;
+}
+
+.box::after {
+	clear: both;
+}
+
+/* custom */
+.btn-toolbar {
+	margin-right: 5px !important;
+}
+

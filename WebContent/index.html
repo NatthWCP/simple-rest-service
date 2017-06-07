@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Simple REST Service</title>
+
+<script src="plugins/jquery-3.2.0/jquery.min.js"></script>
+<script src="plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="css/base-style.css">
+</head>
+<body class="container">
+	<section class="layout">
+		<div class="modal" id="modal-box">
+			<div class="modal-content" id="modal-status"></div>
+		</div>
+
+		<div class="container-fluid box">
+			<div class="box form-group">
+				<input type="text" class="form-control input-lg" id="inputBox"
+					placeholder="Key input here...">
+			</div>
+
+			<div class="btn-toolbar" role="toolbar">
+				<div
+					class="btn-group btn-group-lg btn-group-justified btn-group-fill-height">
+					<a class="btn btn-default" role="button" id="btnAdd"><strong>Add</strong></a>
+					<a class="btn btn-default" role="button" id="btnSearch"><strong>Search</strong></a>
+					<a class="btn btn-default" role="button" id="btnUpdate"><strong>Update</strong></a>
+					<a class="btn btn-default" role="button" id="btnDelete"><strong>Delete</strong></a>
+				</div>
+			</div>
+		</div>
+		<br />
+
+		<div class="container-fluid">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong>Result</strong>
+				</div>
+				<div class="box panel-body" id="result-box"></div>
+			</div>
+		</div>
+	</section>
+	<script src="js/actions.script.js"></script>
+</body>
+</html>
