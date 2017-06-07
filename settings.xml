@@ -1,0 +1,89 @@
+<settings
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <servers>
+    <server>
+      <id>nexus-snapshots</id>
+      <username>deployment</username>
+      <password>{2NqvwUGBCzgHidpYl1ZjbbJUmrgflCoB53Hcl96pBO0=}</password>
+    </server>
+    <server>
+      <id>nexus-releases</id>
+      <username>deployment</username>
+      <password>{2NqvwUGBCzgHidpYl1ZjbbJUmrgflCoB53Hcl96pBO0=}</password>
+    </server>
+  </servers>
+
+  <profiles>
+    <profile>
+      <id>nexus-oss</id>
+      <properties>
+        <WAS_HOME>C:/Program Files (x86)/IBM/WebSphere/AppServer</WAS_HOME>
+        <WAS_ADMIN_USERNAME>admin</WAS_ADMIN_USERNAME>
+        <WAS_ADMIN_PASSWORD>admin</WAS_ADMIN_PASSWORD>
+        <IBM_JDK_1_6_HOME>${WAS_HOME}/java</IBM_JDK_1_6_HOME>
+        <IBM_JRE_1_6_HOME>${WAS_HOME}/java/jre</IBM_JRE_1_6_HOME>
+      </properties>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <name>Central Repository</name>
+          <url>https://repo.maven.apache.org/maven2</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+        <repository>
+          <id>nexus-central</id>
+          <name>Nexus Central Repository</name>
+          <url>http://10.2.154.137:8080/nexus/content/repositories/central/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+        <repository>
+          <id>nexus-snapshots</id>
+          <name>Nexus Snapshots Repository</name>
+          <url>http://10.2.154.137:8080/nexus/content/repositories/snapshots/</url>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </repository>
+        <repository>
+          <id>nexus-releases</id>
+          <name>Nexus Releases Repository</name>
+          <url>http://10.2.154.137:8080/nexus/content/repositories/releases/</url>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </releases>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <name>Central Repository</name>
+          <url>https://repo.maven.apache.org/maven2</url>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>nexus-oss</activeProfile>
+  </activeProfiles>
+
+</settings>
